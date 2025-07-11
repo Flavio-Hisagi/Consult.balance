@@ -87,9 +87,8 @@
         dados.push({ nome, tipo, valor, data });
       }
 
-      salvar();
-        // Enviar para planilha Google
-fetch("https://script.google.com/macros/s/AKfycbw4IVgd0-0tawX38PM7vwsl_Iru6wh_wel1gCrr-e8PDJvJhgbm1aiKNG0TUuI7prdUeQ/exec", {
+       // Enviar para planilha Google
+fetch("https://script.google.com/macros/s/AKfycby1GOXyLfTIJi9a3qyzD45PLRNSS5wPKjBdk5ZXw55pikEzD7WKuDpxlCqVAwEu9sVRSQ/exec", {
   method: "POST",
   body: JSON.stringify({ nome, tipo, valor, data }),
   headers: {
@@ -99,8 +98,9 @@ fetch("https://script.google.com/macros/s/AKfycbw4IVgd0-0tawX38PM7vwsl_Iru6wh_we
 .then(res => res.text())
 .then(resposta => console.log("Resposta do Google Sheets:", resposta))
 .catch(err => console.error("Erro ao enviar:", err));
-
+    }
         
+      salvar();
       limparCampos();
       renderizar();
     }
