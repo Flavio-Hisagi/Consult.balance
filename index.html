@@ -88,6 +88,19 @@
       }
 
       salvar();
+        // Enviar para planilha Google
+fetch("https://script.google.com/macros/s/AKfycbwaPlIxNifJ2CL0WWuL6NnJE290WJmECfD0WILX3PMgUpJTEbW7QtXPrpX2ByY0fdR4XQ/exec", {
+  method: "POST",
+  body: JSON.stringify({ nome, tipo, valor, data }),
+  headers: {
+    "Content-Type": "application/json"
+  }
+})
+.then(res => res.text())
+.then(resposta => console.log("Resposta do Google Sheets:", resposta))
+.catch(err => console.error("Erro ao enviar:", err));
+
+        
       limparCampos();
       renderizar();
     }
