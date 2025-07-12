@@ -90,6 +90,7 @@
        // Enviar para planilha Google
 fetch("https://script.google.com/macros/s/AKfycbx4Tlf0ly5H_nmFYcAFIPa6AcK9VnQSIYX4MaS4z0yDFeMn1pbhGt-4jdvNKkKfzCv-0A/exec", {
   method: "POST",
+  mode: "no-cors",
   body: JSON.stringify({ nome, tipo, valor, data }),
   headers: {
     "Content-Type": "application/json"
